@@ -98,6 +98,8 @@ kube-system         Active   52m
 ollama              Active   51m
 ```
 #### 7. Test with `curl`
+##### 7.1 Prompt
+hello 
 ```
 curl -s POST http://api.inference-gateway.local/v1/chat/completions  -H "Content-Type: application/json"   -d '{"model":"ollama/deepseek-r1:1.5b","messages":[{"role":"user","content":"Hello"}]}' | jq -r 
 {
@@ -122,10 +124,15 @@ curl -s POST http://api.inference-gateway.local/v1/chat/completions  -H "Content
   }
 }
 ```
+##### 7.2 Prompt
+how is the weather in San francisco"
 ```
 curl -s POST http://api.inference-gateway.local/v1/chat/completions  -H "Content-Type: application/json"   -d '{"model":"ollama/deepseek-r1:1.5b","messages":[{"role":"user","content":"how is the weather in San francisco"}]}' | jq -r
 ```
-
+##### 7.3 List models
+```
+curl -s http://api.inference-gateway.local/v1/models
+```
 
 
 
