@@ -1,0 +1,61 @@
+---
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: ollama
+  namespace: ollama
+  labels:
+    app: ollama
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: ollama
+  template:
+    metadata:
+      labels:
+        app: ollama
+    spec:
+      serviceAccountName: ollama
+      containers:
+        - name: ollama-model
+          image: ollama/ollama:0.7.0
+          ports:
+            - containerPort: 11434
+          resources:
+            limits:
+              cpu: 1600m
+              memory: 4000Mi
+              # nvidia.com/gpu: 1 # When deploying on GPU, otherwise let it use the CPU
+            requests:
+              cpu: 1600m
+              memory: 4000Mi
+              # nvidia.com/gpu: 1 # When deploying on GPU, otherwise let it use the CPU
+          envFrom:
+            - configMapRef:
+                name: ollama
+          volumeMounts:
+            - name: ollama-models-store
+              mountPath: /root/.ollama/models
+        - name: ollama-model-puller
+          image: ollama/ollama:0.7.0
+          command:
+            - bash
+          args:
+            - -c
+            - "ollama pull deepseek-r1:1.5b && tail -f /dev/null"
+          env:
+            - name: OLLAMA_HOST
+              value: "127.0.0.1:8080"
+          resources:
+            limits:
+              cpu: 200m
+              memory: 1000Mi
+            requests:
+              cpu: 200m
+              memory: 200Mi
+      volumes:
+        - name: ollama-models-store
+          hostPath:
+            path: /nfs/ollama-models-store
+            type: DirectoryOrCreate
