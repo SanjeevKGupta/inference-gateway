@@ -133,6 +133,60 @@ curl -s POST http://api.inference-gateway.local/v1/chat/completions  -H "Content
 ```
 curl -s http://api.inference-gateway.local/v1/models
 ```
+##### 7.4 `nference-gateway` Configmap
+```
+sanjeev@sanjeevs-mbp mac % kc get cm -n inference-gateway inference-gateway-defaults -o yaml
+apiVersion: v1
+data:
+  ANTHROPIC_API_URL: https://api.anthropic.com/v1
+  CLIENT_IDLE_CONN_TIMEOUT: 30s
+  CLIENT_MAX_IDLE_CONNS: "20"
+  CLIENT_MAX_IDLE_CONNS_PER_HOST: "20"
+  CLIENT_TIMEOUT: 30s
+  CLIENT_TLS_MIN_VERSION: TLS12
+  CLOUDFLARE_API_URL: https://api.cloudflare.com/client/v4/accounts/{ACCOUNT_ID}/ai
+  COHERE_API_URL: https://api.cohere.ai
+  DEEPSEEK_API_URL: https://api.deepseek.com
+  ENABLE_AUTH: "false"
+  ENABLE_TELEMETRY: "false"
+  ENVIRONMENT: production
+  GROQ_API_URL: https://api.groq.com/openai/v1
+  MCP_CLIENT_TIMEOUT: 5s
+  MCP_DIAL_TIMEOUT: 3s
+  MCP_ENABLE: "false"
+  MCP_EXPECT_CONTINUE_TIMEOUT: 1s
+  MCP_EXPOSE: "false"
+  MCP_REQUEST_TIMEOUT: 5s
+  MCP_RESPONSE_HEADER_TIMEOUT: 3s
+  MCP_SERVERS: ""
+  MCP_TLS_HANDSHAKE_TIMEOUT: 3s
+  OIDC_ISSUER_URL: http://keycloak:8080/realms/inference-gateway-realm
+  OLLAMA_API_URL: http://ollama.ollama:8080/v1
+  OPENAI_API_URL: https://api.openai.com/v1
+  SERVER_HOST: 0.0.0.0
+  SERVER_IDLE_TIMEOUT: 120s
+  SERVER_PORT: "8080"
+  SERVER_READ_TIMEOUT: 30s
+  SERVER_TLS_CERT_PATH: ""
+  SERVER_TLS_KEY_PATH: ""
+  SERVER_WRITE_TIMEOUT: 30s
+kind: ConfigMap
+metadata:
+  annotations:
+    meta.helm.sh/release-name: inference-gateway
+    meta.helm.sh/release-namespace: inference-gateway
+  creationTimestamp: "2025-07-04T00:05:36Z"
+  labels:
+    app.kubernetes.io/instance: inference-gateway
+    app.kubernetes.io/managed-by: Helm
+    app.kubernetes.io/name: inference-gateway
+    app.kubernetes.io/version: 0.7.1
+    helm.sh/chart: inference-gateway-0.7.1
+  name: inference-gateway-defaults
+  namespace: inference-gateway
+  resourceVersion: "1181"
+  uid: b62ec336-909c-4b24-b5fe-ca01d4d4d727
+```
 
 
 
