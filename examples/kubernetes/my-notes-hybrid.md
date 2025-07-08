@@ -53,6 +53,7 @@ replicaset.apps/local-path-provisioner-698b58967b     1         1         1     
 replicaset.apps/metrics-server-8584b5786c             1         1         1       52m
 ```
 #### 4. Deploy ollama with a model
+It may take 3-4 mts for ollama image and model to get pulled. 
 ```
 sanjeev@Sanjeevs-MBP hybrid % task deploy-ollama-mac
 
