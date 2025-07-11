@@ -1,3 +1,6 @@
+#### List of models
+
+```
 curl -X GET http://localhost:8080/v1/models | jq -r
 
 {
@@ -159,3 +162,4 @@ curl -X GET http://localhost:8080/v1/models | jq -r
   ],
   "object": "list"
 }
+```
