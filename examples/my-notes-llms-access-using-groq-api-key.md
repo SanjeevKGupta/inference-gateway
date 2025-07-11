@@ -4,7 +4,7 @@
 3. Every LLM does not serve /chat/completions end-point
 
 ### 2. Models accessible using groq API key
-See list here
+[See list here](./docker-compose/basic/groq-models.md)
 #### 2.1 Works out of box with groq API key
 ```
 groq/qwen-qwq-32b
