@@ -26,9 +26,9 @@ groq/deepseek-r1-distill-llama-70b
 #### 2.2 Additional notes on use of each model
 
 2.2.1 groq/distil-whisper-large-v3-en"
-
+```
   "error": "Failed to generate tokens: HTTP error: 400 - Error generating chat completion: {\"error\":{\"message\":\"The mode2 `distil-whisper-large-v3-en` does not support chat completions\",\"type\":\"invalid_request_error\"}}\n"
-
+```
 2.2.2 groq/qwen-qwq-32b
 - works
 
@@ -36,8 +36,9 @@ groq/deepseek-r1-distill-llama-70b
 - works
 
 2.2.4 groq/playai-tts
+```
   "error": "Failed to generate tokens: HTTP error: 400 - Error generating chat completion: {\"error\":{\"message\":\"The model `playai-tts` requires terms acceptance. Please have the org admin accept the terms at https://console.groq.com/playground?model=playai-tts\",\"type\":\"invalid_request_error\",\"code\":\"model_terms_required\"}}\n"
-
+```
 2.2.5 groq/qwen/qwen3-32b
 - Works
 
@@ -57,9 +58,9 @@ groq/deepseek-r1-distill-llama-70b
 - Works
 
 2.2.11 groq/compound-beta-min
-
+```
   "error": "Failed to generate tokens: HTTP error: 404 - Error generating chat completion: {\"error\":{\"message\":\"The model `compound-beta-min` does not exist or you do not have access to it.\",\"type\":\"invalid_request_error\",\"code\":\"model_not_found\"}}\n"
-
+```
 2.2.12 groq/llama3-8b-8192
 - Works
 
@@ -67,9 +68,9 @@ groq/deepseek-r1-distill-llama-70b
 - Works but no text content. A decimal number.
 
 2.2.14 groq/whisper-large-v3
-
+```
   "error": "Failed to generate tokens: HTTP error: 400 - Error generating chat completion: {\"error\":{\"message\":\"The model `whisper-large-v3` does not support chat completions\",\"type\":\"invalid_request_error\"}}\n"
-
+```
 2.2.15 groq/llama3-70b-8192
 - Works
 
@@ -83,13 +84,13 @@ groq/deepseek-r1-distill-llama-70b
 -Works
 
 2.2.19 groq/whisper-large-v3-turbo
-
+```
   "error": "Failed to generate tokens: HTTP error: 400 - Error generating chat completion: {\"error\":{\"message\":\"The model `whisper-large-v3-turbo` does not support chat completions\",\"type\":\"invalid_request_error\"}}\n"
-
+```
 2.2.20 groq/mistral-saba-24b
-
+```
   "error": "Failed to generate tokens: HTTP error: 400 - Error generating chat completion: {\"error\":{\"message\":\"The model `mistral-saba-24b` requires terms acceptance. Please have the org admin accept the terms at https://console.groq.com/playground?model=mistral-saba-24b\",\"type\":\"invalid_request_error\",\"code\":\"model_terms_required\"}}\n"
-
+```
 2.2.21 groq/meta-llama/llama-prompt-guard-2-22m
 - Works but no text content. A decimal number.
 
@@ -97,14 +98,14 @@ groq/deepseek-r1-distill-llama-70b
 - Works
 
 2.2.23 groq/playai-tts-arabic
-
+```
   "error": "Failed to generate tokens: HTTP error: 400 - Error generating chat completion: {\"error\":{\"message\":\"The model `playai-tts-arabic` requires terms acceptance. Please have the org admin accept the terms at https://console.groq.com/playground?model=playai-tts-arabic\",\"type\":\"invalid_request_error\",\"code\":\"model_terms_required\"}}\n"
-
+```
 2.2.24 deepseek/deepseek-chat
-
+```
   "error": "Failed to generate tokens: HTTP error: 402 - Error generating chat completion: {\"error\":{\"message\":\"Insufficient Balance\",\"type\":\"unknown_error\",\"param\":null,\"code\":\"invalid_request_error\"}}"
-
+```
 2.2.25 deepseek/deepseek-reasoner
-
+```
   "error": "Failed to generate tokens: HTTP error: 402 - Error generating chat completion: {\"error\":{\"message\":\"Insufficient Balance\",\"type\":\"unknown_error\",\"param\":null,\"code\":\"invalid_request_error\"}}"
-  
+```
