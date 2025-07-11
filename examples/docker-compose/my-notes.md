@@ -48,7 +48,7 @@ Use the list of models and try testing with different models. Outputs may be dif
 curl -s -X POST http://localhost:8080/v1/chat/completions -H "Content-Type: application/json" -d '{"model": "groq/llama3-70b-8192", "messages": [{"role": "user", "content": "Hello, how are you today?" }]}' | jq -r
 ```
 #### 2.7 Test notes.
-See my notes for the models that work out of the box and few others errorin out.
+[See my notes for the models that work out of the box and few others errorin out.](../my-notes-llms-access-using-groq-api-key.md)
 
 
 
